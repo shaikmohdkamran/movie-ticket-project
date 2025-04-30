@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Miraj Movie Ticketing Center</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(63, 29, 29);
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    nav {
+      background-color: #1c1c1c;
+      padding: 15px 0;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    nav img {
+      height: 40px;
+      vertical-align: middle;
+      margin-right: 15px;
+    }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff9900;
+    }
+    header {
+      background-color: #8a3f0d;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    header h1 {
+      font-size: 36px;
+      margin: 0;
+      letter-spacing: 1.5px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      background: linear-gradient(to bottom, #bc492c, #feb47b, #44b39e);
+
+      text-align: center;
+    }
+    .container h2 {
+      font-size: 30px;
+      color: #b3afaf;
+    }
+    .container p {
+      font-size: 18px;
+      color: #555;
+    }
+    .movie-select {
+      margin-top: 30px;
+    }
+    .movie-select label {
+      font-size: 16px;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .movie-select select,
+    .movie-select button {
+      padding: 12px;
+      font-size: 16px;
+      width: 250px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .movie-select button {
+      background-color: #8a3f0d;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .movie-select button:hover {
+      background-color: #a9501f;
+    }
+    .movie-images {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 40px 0;
+    }
+    .movie-card {
+      text-align: center;
+      margin: 10px;
+    }
+    .movie-card img {
+      width: 200px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+    .movie-card img:hover {
+      transform: scale(1.05);
+    }
+    .movie-card p {
+      margin: 8px 0 4px;
+      font-size: 16px;
+    }
+    .movie-card .price {
+      color: #8a3f0d;
+      font-weight: bold;
+    }
+    .movie-card .rating {
+      color: #ffaa00;
+    }
+    .contact-section {
+      background-color: #1c1c1c;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .contact-section h3 {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    .contact-section form input,
+    .contact-section form textarea,
+    .contact-section form button {
+      width: 80%;
+      padding: 12px;
+      font-size: 16px;
+      margin: 10px auto;
+      display: block;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .contact-section form button {
+      background-color: #8a3f0d;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .contact-section form button:hover {
+      background-color: #a9501f;
+    }
+    @media (max-width: 768px) {
+      .movie-images {
+        flex-direction: column;
+        align-items: center;
+      }
+      .movie-select select,
+      .movie-select button {
+        width: 100%;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Miraj Movie Ticket Booking</h1>
+  </header>
+
+  <nav>
+    <img src="C:\Users\Zeeshan\Downloads\R.jpeg" alt="Miraj Logo" />
+    <a href="index.html">Home</a>
+    <a href="booking.html">Booking</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <h2>Choose Your Movie and Book Tickets</h2>
+    <p>Select a movie below to get started with booking your tickets:</p>
+    <div class="movie-select">
+      <label for="movie">Select Movie:</label>
+      <select name="movie" id="movie" required>
+        <option value="" disabled selected>Select a Movie</option>
+        <option value="movie1">THE JOKER</option>
+        <option value="movie2">THE DARK SOCIETY</option>
+        <option value="movie3">THE DICTATOR</option>
+        <option value="movie4">INTERSTELLAR</option>
+      </select>
+      <button onclick="goToBooking()">Book Tickets</button>
+    </div>
+  </div>
+
+  <div class="movie-images">
+    <div class="movie-card">
+      <img src="C:\Users\Zeeshan\OneDrive\Gambar\images.jpeg" alt="The Joker" />
+      <p class="title">THE JOKER</p>
+      <p class="price">Price: ₹250</p>
+      <p class="rating">Rating: ⭐⭐⭐⭐☆</p>
+    </div>
+    <div class="movie-card">
+      <img src="C:\Users\Zeeshan\OneDrive\Gambar\drama-movie-poster-template-design-aca536dd594f745b32bee67980c8690d_screen.jpg" alt="The Dark Society" />
+      <p class="title">THE DARK SOCIETY</p>
+      <p class="price">Price: ₹220</p>
+      <p class="rating">Rating: ⭐⭐⭐⭐☆</p>
+    </div>
+    <div class="movie-card">
+      <img src="C:\Users\Zeeshan\OneDrive\Gambar\download.jpeg" alt="The Dictator" />
+      <p class="title">THE DICTATOR</p>
+      <p class="price">Price: ₹200</p>
+      <p class="rating">Rating: ⭐⭐⭐☆☆</p>
+    </div>
+    <div class="movie-card">
+      <img src="C:\Users\Zeeshan\OneDrive\Gambar\intersellar (1).jpeg" alt="Interstellar" />
+      <p class="title">INTERSTELLAR</p>
+      <p class="price">Price: ₹270</p>
+      <p class="rating">Rating: ⭐⭐⭐⭐⭐</p>
+    </div>
+  </div>
+
+  <div class="contact-section" id="contact">
+    <h3>Contact Us</h3>
+    <p>If you have any queries, just contact us.8341909225,narasimha12@gmail.com,narasimha<br>Regards, Miraj Cinemas</p>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="text" placeholder="Your Phonenumber" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <script>
+    function goToBooking() {
+      const movieDropdown = document.getElementById("movie");
+      const selectedValue = movieDropdown.value;
+
+      if (!selectedValue) {
+        alert("Please select a movie first!");
+        return;
+      }
+
+      const movieNameMap = {
+        movie1: "THE JOKER",
+        movie2: "THE DARK SOCIETY",
+        movie3: "THE DICTATOR",
+        movie4: " THE INTERSTELLAR",
+      };
+
+      sessionStorage.setItem("selectedMovie", movieNameMap[selectedValue]);
+      window.location.href = "booking.html";
+    }
+</script>
+
+</body>
+</html>
